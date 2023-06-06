@@ -1,5 +1,8 @@
+import { Header } from '@/components/Header/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Footer } from '@/components/Footer/footer'
+import StarParticles from '@/components/StarParticles/starparticles'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <StarParticles></StarParticles>
+        <main>
+          <Header></Header>
+          <div className="container mx-auto px-4">
+            {children}
+          </div>
+          <Footer></Footer>
+        </main>
+      </body>
     </html>
   )
 }
